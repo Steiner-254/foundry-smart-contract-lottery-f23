@@ -1,25 +1,3 @@
-# Proveably Random Raffle Contracts
-
-## About
-
-This code is to create a proveably random smart contract lottery.
-
-## What we want it to do?
-
-1. Users should be able to enter the raffle by paying for a ticket. The ticket fees are going to be the prize the winner receives.
-2. The lottery should automatically and programmatically draw a winner after a certain period.
-3. Chainlink VRF should generate a provably random number.
-
-4. Chainlink Automation should trigger the lottery draw regularly.
-
-### Directory For Local Host Setup
-```javascript
-cd ~/foundry-f23/foundry-smart-contract-lottery-f23
-```
-
-- This is the full end goal contract:
-
-```solidity
 // Layout of Contract:
 // version
 // imports
@@ -51,7 +29,7 @@ import {AutomationCompatibleInterface} from "@chainlink/contracts/src/v0.8/inter
 
 /**
  * @title A sample Raffle Contract
- * @author Patrick Collins
+ * @author Steiner254
  * @notice This contract is for creating a sample raffle contract
  * @dev This implements the Chainlink VRF Version 2
  */
@@ -82,7 +60,7 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
     uint256 private s_lastTimeStamp;
     address private s_recentWinner;
     address payable[] private s_players;
-    RaffleState private s_raffleState;
+    RaffleState private s_raffleState; // start as open
 
     /* Events */
     event RequestedRaffleWinner(uint256 indexed requestId);
@@ -244,4 +222,3 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
         return s_players.length;
     }
 }
-```
