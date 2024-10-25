@@ -74,7 +74,8 @@ forge script script/Deploy.s.sol
 ```
 
 ## License 📜
-- This project is licensed under the MIT License. See the LICENSE file for details.
+- This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the [LICENSE](./LICENSE) file for details.
+
 
 ## Contributing 🤝
 - Project Developed By: ![Steinet254](https://twitter.com/Steiner254)
